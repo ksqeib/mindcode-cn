@@ -21,8 +21,7 @@ Mindcode的设计考虑了两大重要方面:
 
 ## 使用Mindcode
 
-Mindcode网页被架设在 http://mindcode.herokuapp.com/ 。写一些Mindcode在 _Mindcode源码_ 框的地方，然后按下
-**编译(Compile)**按钮。 然后在 _Mindustry Logic_ 文本框中你需要的 Logic 版本的 Mindcode就有了。
+Mindcode网页被架设在 http://mindcode.herokuapp.com/ 。写一些Mindcode在 _Mindcode源码_ 框的地方，然后按下**编译(Compile)**按钮。 然后在 _Mindustry Logic_ 文本框中你需要的 Logic 版本的 Mindcode就有了。
 复制编译后的版本。 回到Mindustry，编辑你的处理器，然后按下Logic UI中的**编辑**按钮。
 选择**从剪贴板导入**。Mindustry现在就已经准备好执行你的代码了。
 
