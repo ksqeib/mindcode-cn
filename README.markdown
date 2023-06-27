@@ -1,74 +1,69 @@
 # Mindcode
 
-Welcome to Mindcode, a high-level language for [Mindustry](https://github.com/anuke/mindustry). Mindustry is a game in
-the tower-defense genre. Mindustry added Logic in late 2020. Logic is a programming language, closer to assembly than a
-high-level language. Mindcode aims to make Mindustry programming easier for everyone.
+欢迎来到Mindcode，一款为[Mindustry](https://github.com/anuke/mindustry)设计的高级语言。Mindustry是一款塔防类游戏。
+Mindustry在2020年末增加了Logic，Logic是一个接近更汇编而不是高级语言的语言。 Mindcode旨在让每个人都能更轻松地进行Mindustry编程。
 
-The main focus of Mindcode design is two-fold:
-* Keeping terminology and naming convention close to Mindustry Logic.
-* Provide language constructs that are not prohibitively expensive given the astonishingly slow speeds
-  and limited instruction space of Mindustry processors.
+Mindcode的设计考虑了两大重要方面:
+* 保持术语和命名约定接近Mindustry Logic。
+* 考虑到Mindustry中有限的命名空间和惊人的缓慢速度，提供开销不是很大的高级语言结构。
 
-## Latest development
+## 最新进展
 
-Some of the latest enhancements to Mindcode are:
+一些Mindcode的新版本增强有:
 
-* Added support for the new [`angleDiff` operation](doc/syntax/FUNCTIONS_V7.markdown#instruction-op) in Mindustry v145.
-* [Schematics builder](doc/syntax/SCHEMACODE.markdown). This tool allows you to define a Mindustry schematic in 
-  Schemacode, a specialized definition language. Schemacode definitions can be compiled into Mindustry schematic, 
-  either as a binary `.msch` file, or as a text. Processors can be included in these schematics, complete with the 
-  code (specified in Mindcode or Mindustry Logic language) and linked blocks.
-* [Data flow optimization](doc/syntax/SYNTAX-5-OTHER.markdown#data-flow-optimization). This optimization optimizes 
-  and streamlines complex expressions, eliminates unnecessary variables and instructions, and reuses common cde 
-  fragments, significantly improving the quality of the generated mlog code.
+* 增加了对新功能[`angleDiff` 操作符](doc/syntax/FUNCTIONS_V7.markdown#instruction-op) Mindustry v145 的支持。
+* [蓝图构建器](doc/syntax/SCHEMACODE.markdown)。 该工具允许您使用一种特殊的定义语言Schemacode定义一个Mindustry蓝图。Schemacode的定义可被编译为Mindustry蓝图，
+  或者是二进制文件`.msch`，亦或是普通的文本。处理器可以被包括在蓝图中并且带有编译的代码
+  (可以指定Mindcode或者Mindustry Logic)以及方块之间的连接。
+* [数据流优化](doc/syntax/SYNTAX-5-OTHER.markdown#data-flow-optimization)。这种优化优化和精简了复杂的表达式，消除了不必要的变量和指令，并重用了常见的cde片段，显著提高了生成的mlog代码的质量。
 
-A [changelog](CHANGELOG.markdown) is now maintained for releases.
+一个 [更新日志](CHANGELOG.markdown) 现在被维护以供发布。
 
-## Using Mindcode
+## 使用Mindcode
 
-Mindcode is available at http://mindcode.herokuapp.com/. Write some Mindcode in the _Mindcode Source Code_ text area,
-then press the **Compile** button. The _Mindustry Logic_ text area will contain the Logic version of your Mindcode. 
-Copy the compiled version. Back in Mindustry, edit your processor, then use the **Edit** button in the Logic UI. 
-Select **Import from Clipboard**. Mindustry is now ready to execute your code. 
+Mindcode网页被架设在 http://mindcode.herokuapp.com/ 。写一些Mindcode在 _Mindcode源码_ 框的地方，然后按下
+**编译(Compile)**按钮。 然后在 _Mindustry Logic_ 文本框中你需要的 Logic 版本的 Mindcode就有了。
+复制编译后的版本。 回到Mindustry，编辑你的处理器，然后按下Logic UI中的**编辑**按钮。
+选择**从剪贴板导入**。Mindustry现在就已经准备好执行你的代码了。
 
-It is also possible to build Mindcode locally (see the [Development](#development) section), and use the
-[command line tool](doc/syntax/TOOLS-CMDLINE.markdown) to compile your files, even copying the compiled code into 
-the clipboard automatically if desired.
+也可以在本地编译Mindcode(查看[开发](#开发)章节)，并且使用
+[命令行工具](doc/syntax/TOOLS-CMDLINE.markdown)来编译你的文件，
+甚至可以根据需要自动将编译后的代码复制到剪贴板中。
 
-### Mindcode Syntax
+### Mindcode语法
 
-Please read the [syntax](doc/syntax/SYNTAX.markdown) document for the high-level information.
-The samples in the `src/main/resources/samples` directory are compiled on every test run and are thus
-always up-to-date with the most-recent version of Mindcode. If you programmed in any high-level language, you should
-feel right at home.
+请阅读 [语法](doc/syntax/SYNTAX.markdown) 文档来获取高级信息。
+`src/main/resources/samples`目录中的示例文件都会随着最近新版本的Mindcode更新在测试运行时被编译
+如果你用过任何高级语言编程，你应该
+感觉宾至如归。
 
-### VS Code syntax highlighting
+### VS Code语法高亮
 
-[@schittli](https://github.com/schittli) kindly contributed a VS Code syntax highlighter.
+[@schittli](https://github.com/schittli) 好心地贡献了一个VS Code语法高亮。
 
-![screenshot of Visual Studio Code, with Mindcode syntax highlighting](https://user-images.githubusercontent.com/8282673/112750180-43947a00-8fc7-11eb-8a22-83be7624753e.png)
+![Visual Studio代码的屏幕截图，Mindcode语法高亮](https://user-images.githubusercontent.com/8282673/112750180-43947a00-8fc7-11eb-8a22-83be7624753e.png)
 
-Download the extension from the [Visual Studio marketplace](https://marketplace.visualstudio.com/items?itemName=TomSchi.mindcode).
-I'm not sure how well the extension supports latest additions to Mindcode.
+从[Visual Studio 市场](https://marketplace.visualstudio.com/items?itemName=TomSchi.mindcode)中下载扩展。
+我不确定这个扩展对Mindcode最新添加内容的支持程度好不好。
 
-### IntelliJ IDEA syntax highlighting
+### IntelliJ IDEA语法高亮
 
-IntelliJ IDEA (even the Community edition) can be easily configured for basic Mindcode syntax highlighting.
+IntelliJ IDEA (甚至是社区版) 可以很容易地配置出基本的Mindcode语法高亮显示。
 
-* Go to _File / Settings_, or press Ctrl-Alt-S
-* Navigate to _Editor / File types_
-* Create new file type
+* 找到 _File / Settings_，或者按下 Ctrl-Alt-S
+* 引导到 _Editor / File types_
+* 创建新的文件类型
   * _Name_: Mindcode
-  * _Description_: Mindcode source file
-  * _Line comment_: `//` (leave _Only at line start_ unchecked)
-  * _Block comment start/end_: leave empty
+  * _Description_: Mindcode源文件
+  * _Line comment_: `//` (让 _Only at line start_ 不要勾选)
+  * _Block comment start/end_: 留空
   * _Hex prefix_: `0x`
-  * _Number postfixes_: leave empty
-  * _Keywords_: paste Mindcode keywords to the first list. Optionally, paste Mindustry Logic object names to the second list. 
-  * _Ignore case_: leave unchecked.
+  * _Number postfixes_: 留空
+  * _Keywords_: 将Mindcode关键字粘贴到第一个列表中。（可选）将Mindusty Logic对象名称粘贴到第二个列表中。
+  * _Ignore case_: 保留不勾选
 * Assign a file extension `*.mnd`
 
-<details><summary>Show full list of Mindcode keywords.</summary>
+<details><summary>显示Mindcode关键字的完整列表。</summary>
 
 ```
 allocate
@@ -103,7 +98,7 @@ while
 
 </details>
 
-<details><summary>Show full list of Mindustry Logic object names.</summary>
+<details><summary>显示Mindusty Logic对象名称的完整列表。</summary>
 
 ```
 @additive-reconstructor
@@ -631,43 +626,41 @@ while
 
 </details>
 
-## Mindustry Logic References
+## Mindustry Logic参考
 
-If you don't know much about Mindustry Logic, you can read more information about them here:
+如果你对Mindusty Logic了解不多，你可以在这里阅读更多关于它们的信息：
 
-* [Logic in 6.0](https://www.reddit.com/r/Mindustry/comments/ic9wrm/logic_in_60/) <small>Aug 2020</small>
-* [How To Use Processors in 6.0](https://steamcommunity.com/sharedfiles/filedetails/?id=2268059244) <small>Nov 2020</small>
-* [An Overly In-Depth Logic Guide](https://www.reddit.com/r/Mindustry/comments/kfea1e/an_overly_indepth_logic_guide/) <small>Dec 2020</small>
+* [6.0中的Logic](https://www.reddit.com/r/Mindustry/comments/ic9wrm/logic_in_60/) <small>2020年8月</small>
+* [如何在6.0中使用处理器](https://steamcommunity.com/sharedfiles/filedetails/?id=2268059244) <small>2020年11月</small>
+* [超深度逻辑指南](https://www.reddit.com/r/Mindustry/comments/kfea1e/an_overly_indepth_logic_guide/) <small>2020年12月</small>
 
-There also exists a [VSCode syntax highlighter for Mindustry Logic](https://marketplace.visualstudio.com/items?itemName=Antyos.vscode-mlog).
+还有一个 [用于Mindusty Logic的VSCode语法高亮器](https://marketplace.visualstudio.com/items?itemName=Antyos.vscode-mlog).
 
-## Development
+## 开发
 
-There are two options for getting Mindcode up and running on your own machine. Using Docker, or running it natively:
+有两种选择可以让Mindcode在您自己的机器上运行。使用Docker或本机运行：
 
-### With Docker & Docker Compose
+### 使用Docker和Docker Compose
 
 ```
 docker-compose up --build
 ```
 
-It can take a few minutes to download and compile all the required parts the first time you run this, but subsequent
-runs will be a lot faster.
+第一次运行时可能需要几分钟的时间来下载和编译所有需要的部分，但随后会快很多。
+Mindcode UI现在将在本地主机8080端口上运行。用浏览器打开 http://localhost:8080/ 即可使用。
 
-The Mindcode UI will now be running on localhost, port 8080. Visit http://localhost:8080/ to interact with it.
+### 本机安装
 
-### Native installation
+1. 安装Java 17+、Maven 3.6和PostgreSQL
+2. 在PostgreSQL中创建一个名为`mindcode_development`的数据库
 
-1. Install Java 17+, Maven 3.6, and PostgreSQL
-2. Create a database in PostgreSQL named `mindcode_development`
-
-Note: Docker configuration has been updated to allow running Mindcode in Docker alongside a local PostgreSQL 
-installation.  
+注意：Docker配置已经更新，允许在本地PostgreSQL安装的同时在Docker中运行Mindcode。
 
 #### Windows 
 
-Set environment variables with the PostgreSQL connection parameters. You can set them by running the following 
-commands in the console: 
+使用PostgreSQL连接参数设置环境变量。您可以通过运行以下程序来设置它们 
+
+控制台中的命令：
 
 ```
 SET SPRING_DATASOURCE_URL=jdbc:postgresql://localhost/mindcode_development
@@ -675,27 +668,26 @@ SET SPRING_DATASOURCE_USERNAME=postgres_username
 SET SPRING_DATASOURCE_PASSWORD=postgres_password
 ```
 
-You also need to set a `JAVA_HOME` variable pointing to the directory containing your Java 17 installation, for 
-example (the exact path depends on the distribution and version of Java you've installed):
+您还需要设置一个`JAVA_HOME`变量，指向包含JAVA 17安装的目录，
+举个例子（具体路径取决于您安装的Java的发行版和版本）：
 
 ```
 SET JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-17.0.6.10-hotspot
 ```
 
-(You can also set all these variables permanently in the _System Properties_ dialog, in the _Advanced_ tab, after 
-pressing the _Environment Variables..._ button.)
+（您也可以在_系统属性_对话框中的_高级_选项卡中，然后按下_环境变量…_按钮。）
 
-Then, using the same console window, run:
+然后，使用相同的控制台窗口，运行：
 
 ```
 bin\webapp.bat
 ```
 
-The Mindcode UI will now be running on localhost, port 8080. Visit http://localhost:8080/ to interact with it.
+Mindcode UI现在将在本地主机8080端口上运行。用浏览器打开 http://localhost:8080/ 即可使用。
 
 #### Linux
 
-Set environment variables with the PostgreSQL connection parameters:
+给PostgreSQL设置连接参数相关的环境变量：
 
 ```
 export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost/mindcode_development
@@ -703,37 +695,36 @@ export SPRING_DATASOURCE_USERNAME=postgres_username
 export SPRING_DATASOURCE_PASSWORD=postgres_password
 ```
 
-Then run:
+然后运行：
 
 ```
 bin/run-local
 ```
 
-The Mindcode UI will now be running on localhost, port 8080. Visit http://localhost:8080/ to interact with it.
+Mindcode UI现在将在本地主机8080端口上运行。用浏览器打开 http://localhost:8080/ 即可使用。
 
 #### IDE
 
-To run the application for your IDE, set the environment variables as described above (some IDEs allow to set them 
-just in the IDE) and set the startup class to `info.teksol.mindcode.webapp.WebappApplication`. When you run or debug 
-the project, the Mindcode UI will now be running on localhost, port 8080. Visit http://localhost:8080/ to interact 
-with it.
+要为您的IDE运行应用程序，请如上所述设置环境变量（某些IDE允许设置它们
+仅在IDE中），并将启动类设置为`info.teksol.mindcode.webapp.WebappApplication`。当您运行或调试项目中，
+Mindcode UI现在将在本地主机8080端口上运行。用浏览器打开 http://localhost:8080/ 即可使用。
 
-### Contributing 
+### 如何贡献
 
-The compiler was written in a Test-Driven Development fashion. If you can, please look in `src/main/test` and attempt to
-emulate an existing test, so that we can prove that your proposal works as intended.
+编译器是以测试驱动开发的方式编写的。如果可以，请查看`src/main/test`并尝试
+模仿现有的测试，这样我们就可以证明是按你的预期运行的。
 
-Tests in the `info.teksol.mindcode.processor` package are particularly useful. They compile a script and run it
-on an emulated processor, comparing values produced by `print` instructions with expected ones. The processor emulator
-cannot execute instructions interfacing with the Mindustry world - except Memory Bank and MemoryCell - but it can
-process all kinds of Mindcode control elements. Implementing some more complicated algorithms using loops, 
-conditional statements and/or function helps tremendously. (The emulated processor runs much faster than Mindcode
-processors, so even more complicated algorithms are feasible to run.)
+`info.teksol.mindcode.processor`包中的测试特别有用。他们编译并运行脚本
+在模拟处理器上，将`print`指令产生的值与预期值进行比较。处理器模拟器
+无法执行与Mindusty世界接口的指令-除了Memory Bank和MemoryCell-但它可以
+处理各种Mindcode控制元素。使用循环实现一些更复杂的算法，
+条件语句和/或函数帮助很大。（模拟处理器的运行速度比Mindcode快得多
+处理器，因此运行更复杂的算法是可行的。）
 
-## Roadmap
+## 路线图
 
-Or perhaps a wish-list, can be found [here](ROADMAP.markdown).  
+或者是一份愿望清单，可以在[这里](ROADMAP.markdown)被找到哦。
 
-# License
+# 许可证
 
-MIT. See LICENSE for the full text of the license.
+MIT。有关许可证的全文，请参阅LICENSE文件。
